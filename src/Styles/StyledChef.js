@@ -22,7 +22,6 @@ export const Wrapper = styled.div`
     padding-bottom: 2em;
     padding-top: 140px;
     overflow: hidden;
-    backdrop-filter: brightness(0.8);
 
     .content {
         max-width: 1100px;
