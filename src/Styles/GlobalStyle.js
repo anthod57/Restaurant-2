@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
     }
 
+    html {
+        
+    }
+
 
     html, body {
         background-color: black;

@@ -11,7 +11,7 @@ export const Menu = (props) => {
                     <Menus>
                         {props.dishes.map((dish, index) => {
                             return(
-                                <MenuItem key={index}>
+                                <MenuItem key={`dish-${index}`}>
                                     <div className="header">
                                         <h4>{dish.title}</h4>
                                         <span>{dish.price}</span>

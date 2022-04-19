@@ -25,7 +25,7 @@ export const Navbar = (props) => {
                     <div className="nav-left">
                         <NavLinks>
                             { props.menu.map((item, index) => {
-                                if(item.side === "left") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={index} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side === "left") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
                             }) }
                         </NavLinks>
                     </div>
@@ -37,7 +37,7 @@ export const Navbar = (props) => {
                     <div className="nav-right">
                         <NavLinks>
                             { props.menu.map((item, index) => {
-                                if(item.side === "right") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={index} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side === "right") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
                             }) }
                         </NavLinks>
                     </div>
@@ -49,7 +49,7 @@ export const Navbar = (props) => {
                     <MobileMenu show={showMobileMenu} useOpacity={showMobileMenu}>
                         <ul>
                             { props.menu.map((item, index) => {
-                                if(item.side !== "footer") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={index} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side !== "footer") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={`mobile-${item.link}`} id={item.id}><li>{item.text}</li></a>);
                             }) }
                         </ul>
                     </MobileMenu>

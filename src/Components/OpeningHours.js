@@ -10,7 +10,7 @@ export const OpeningHours = (props) => {
                     <div className="schedule">
                         {props.schedule.map((day, index) => {
                             return (
-                                <div className="row">
+                                <div className="row" key={`day-${index}`}>
                                     <span>{day.day}</span>
                                     <span>{`${day.open} - ${day.close}`}</span>
                                 </div>
