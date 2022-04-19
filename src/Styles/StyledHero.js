@@ -68,7 +68,7 @@ export const ScrollIcon = styled.div`
     margin-left: -20px;
     bottom: 5%;
     margin-top: -35px;
-    box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px #fff !important;
     border-radius: 25px;
     opacity: 0.2;
 
@@ -85,6 +85,7 @@ export const ScrollIcon = styled.div`
         animation-duration: 2.5s;
         animation-iteration-count: infinite;
         animation-name: ${ScrollAnimation};
+        background-color: white !important;
     }
 
     @media only screen and (max-width: 767px){
