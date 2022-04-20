@@ -7,11 +7,11 @@ export const Hero = (props) => {
             <Container image={props.bg}>
                 <div className="background" />
                 <Wrapper>
-                    <h1>Nom du restaurant</h1>
+                    <h1>{props.title}</h1>
                     <p className="hero-text">
-                        Vivez une expérience inoubliable.
+                        {props.subTitle}
                     </p>
-                    <button>RÉSERVER</button>
+                    <button onClick={() => props.booking(true)}>{props.buttonText}</button>
                 </Wrapper>
                 <ScrollIcon></ScrollIcon>
             </Container>

@@ -10,14 +10,17 @@ export const Navbar = (props) => {
     const [showMobileMenu, setShowMobileMenu] = useState(0);
 
     useEffect(() => {
-        const onScroll = () => setOffset(window.pageYOffset);
+        const onScroll = () => {
+            setOffset(window.pageYOffset);
+        }
+
+        console.log(process.env.REACT_APP_TEST);
 
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
 
         return () => window.removeEventListener('scroll', onScroll);
     }, [])
-
     return (
         <nav>
             <Container useOpacity={offset} show={showMobileMenu}>
@@ -25,7 +28,13 @@ export const Navbar = (props) => {
                     <div className="nav-left">
                         <NavLinks>
                             { props.menu.map((item, index) => {
-                                if(item.side === "left") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side === "left"){
+                                    if(item.id === "book"){
+                                        return (<a onClick={() => {setShowMobileMenu(false); props.book(true)} } key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                    }else{
+                                        return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                    }
+                                }
                             }) }
                         </NavLinks>
                     </div>
@@ -37,7 +46,13 @@ export const Navbar = (props) => {
                     <div className="nav-right">
                         <NavLinks>
                             { props.menu.map((item, index) => {
-                                if(item.side === "right") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side === "right"){
+                                    if(item.id === "book"){
+                                        return (<a onClick={() => {setShowMobileMenu(false); props.book(true)} } key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                    }else{
+                                        return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                    }
+                                }
                             }) }
                         </NavLinks>
                     </div>
@@ -49,7 +64,13 @@ export const Navbar = (props) => {
                     <MobileMenu show={showMobileMenu} useOpacity={showMobileMenu}>
                         <ul>
                             { props.menu.map((item, index) => {
-                                if(item.side !== "footer") return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={`mobile-${item.link}`} id={item.id}><li>{item.text}</li></a>);
+                                if(item.side !== "footer"){
+                                    if(item.id === "book"){
+                                        return (<a onClick={() => {setShowMobileMenu(false); props.book(true)} } key={item.link} id={item.id}><li>{item.text}</li></a>);
+                                    }else{
+                                        return (<a href={item.link} onClick={() => setShowMobileMenu(false)} key={`mobile-${item.link}`} id={item.id}><li>{item.text}</li></a>);
+                                    }
+                                }
                             }) }
                         </ul>
                     </MobileMenu>

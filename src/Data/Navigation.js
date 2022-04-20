@@ -25,9 +25,9 @@ export const MENU_ITEMS = [
     },
     {
         text: "Réserver",
-        id: "nav-reserver",
+        id: "book",
         side: "right",
-        link: "#reserver"
+        link: ""
     },
     {
         text: "Contact",

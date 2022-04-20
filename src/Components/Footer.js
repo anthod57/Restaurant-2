@@ -32,14 +32,20 @@ export const Footer = (props) => {
                         <h3>Navigation</h3>
                         <ul>
                             {props.menu.map((item, index) => {
-                                if(item.side !== "footer") return(<a href={item.link} key={index}><li>{item.text}</li></a>)
+                                if(item.side !== "footer"){
+                                    if(item.id === "book"){
+                                        return(<a key={"footer-book"} onClick={() => props.book(true)}><li>{item.text}</li></a>)
+                                    }else{
+                                        return(<a href={item.link} key={`footer-${item.link}`}><li>{item.text}</li></a>)
+                                    }
+                                }
                             })}
                         </ul>
                     </Navigation>
                 </Wrapper>
                 <div className="bottom">
                         <div className="copyright">
-                        ©2022 RESTAURANT — SITE CRÉE PAR <a href="https://anthonydragun.fr/">AD</a>
+                        ©2022 {props.title} — SITE CRÉE PAR <a href="https://anthonydragun.fr/">AD</a>
                         </div>
                         <div className="others">
                             <ul>

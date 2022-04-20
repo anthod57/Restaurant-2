@@ -108,5 +108,6 @@ export const Navigation = styled.div`
         margin-block-start: 0;
         margin-block-end: 0;
         padding-inline-start: 0px;
+        cursor: pointer;
     }
 `

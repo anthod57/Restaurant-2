@@ -6,8 +6,8 @@ export const Menu = (props) => {
         <section id="menu">
             <Container>
                 <Wrapper>
-                    <h2>Menu</h2>
-                    <h3>Nos plats les plus populaires</h3>
+                    <h2>{props.title}</h2>
+                    <h3>{props.subTitle}</h3>
                     <Menus>
                         {props.dishes.map((dish, index) => {
                             return(

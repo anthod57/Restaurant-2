@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    background-color: ${props => props.useOpacity > 0 || props.show ? "black" : "#00000040"};
+    background-color: ${props => props.useOpacity > 0 || props.show ? "black" : "transparent"};
     height: 100px;
     position: fixed;
     z-index: 10;
@@ -73,6 +73,10 @@ export const NavLinks = styled.ul`
     a {
         margin: 1em;
         float: left;
+
+        li {
+            cursor: pointer;
+        }
     }
 `
 
